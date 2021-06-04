@@ -1,0 +1,61 @@
+<div class="covid-data-item">
+    <div class="row">
+        <div class="card column text-dark  mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <p class="card-text card-heading">Total vaccines</p>
+                <p class="card-text">{{covidVaccine.totalVaccinations | numberSystem}}</p>
+            </div>
+        </div>
+        <div class="card column text-dark  mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <p class="card-text card-heading">People Vaccinated One Time</p>
+                <p class="card-text">{{covidVaccine.peopleVaccinated | numberSystem}}</p>
+            </div>
+        </div>
+        <div class="card column text-dark  mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <p class="card-text card-heading">People Fully Vaccinated</p>
+                <p class="card-text">{{covidVaccine.peopleFullyVaccinated | numberSystem}}</p>
+            </div>
+        </div>
+        <div class="card column text-dark  mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <p class="card-text card-heading">Lastest Daily Vaccination vaccines</p>
+                <p class="card-text">{{covidVaccine.dailyVaccinations | numberSystem}}</p>
+            </div>
+        </div>
+        <div class="card column text-dark  mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <p class="card-text card-heading">Toatal Vaccination Per Hundred</p>
+                <p class="card-text">{{covidVaccine.totalVaccinationsPerHundred}}</p>
+            </div>
+        </div>
+        <div class="card column text-dark  mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <p class="card-text card-heading">People Vaccinated One Time Per Hundred</p>
+                <p class="card-text">{{covidVaccine.peopleVaccinatedPerHundred}}</p>
+            </div>
+        </div>
+        <div class="card column text-dark  mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <p class="card-text card-heading">People Fully Vaccinated Per Hundred</p>
+                <p class="card-text">{{covidVaccine.peopleFullyVaccinatedPerHundred}}</p>
+            </div>
+        </div>
+        <div class="card column text-dark  mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <p class="card-text card-heading">Lastest Daily Vaccination Per Million</p>
+                <p class="card-text">{{covidVaccine.dailyVaccinationsPerMillion}}</p>
+            </div>
+        </div>
+        <div class="card column text-dark  mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+                <p class="card-text card-heading">Vaccines</p>
+                <p class="card-text">{{covidVaccine.vaccines}}</p>
+
+                <!-- <p class="card-text"> <span *ngFor="let vaccine of covidVaccine.vaccines"> {{vaccine}}</span></p> -->
+            </div>
+        </div>
+    </div>
+
+</div>

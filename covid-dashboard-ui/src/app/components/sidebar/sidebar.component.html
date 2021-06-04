@@ -1,0 +1,13 @@
+<div class="sidenav margin-top55">
+  <div class="search-box">
+    <form #searchForm="ngForm">
+      <div class="input-group-sm">
+        <input class="form-control" type="search " name="search" placeholder="Search " (input)="filterCountry()"
+          [(ngModel)]="search" required>
+      </div>
+    </form>
+  </div>
+  <a [routerLink]="['/view/'+country.code]" *ngFor="let country of filterCountryList">
+    <div style="margin-left: 1rem;">{{country.name}}</div>
+  </a>
+</div>

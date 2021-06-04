@@ -1,0 +1,37 @@
+version: '3'
+networks:
+    covid-network: 
+        driver: bridge
+services:
+    db:
+        image: postgres
+        restart: always
+        environment:
+          POSTGRES_PASSWORD: postgres
+        ports: 
+            - 5432:5432
+        networks: 
+            - covid-network
+
+    ui:
+        build: ./covid-dashboard-ui/
+        ports: 
+            - 4200:80
+        networks: 
+            - covid-network
+
+    vaccineservice:
+        build: ./covid-vaccine-service/
+        ports: 
+            - 9090:9090
+        networks: 
+            - covid-network
+
+    countryservice:
+        build: ./country-service/
+        ports: 
+            - 9091:9091
+        depends_on: 
+            - db
+        networks: 
+            - covid-network

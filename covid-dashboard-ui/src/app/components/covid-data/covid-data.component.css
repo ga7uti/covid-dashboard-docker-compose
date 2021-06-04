@@ -1,0 +1,46 @@
+.covid-data{
+    margin-top: 3rem;
+    background-color: white;
+}
+
+.nav-link{
+    color: #495057;
+}
+
+.nav-link.active{
+    color: black;
+}
+
+.covid-data-item{
+    margin-top: 1rem;
+    padding: 30px;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 5px;
+}
+  
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.card-body p{
+    margin: 0;
+    padding: 0;
+}
+
+.card-heading{
+    font-weight: 600;
+    color: #545b64; 
+}
+
+.card{
+    border: white;
+    border-right: solid #f8f9fa ;
+    border-radius: 0%;
+}
+

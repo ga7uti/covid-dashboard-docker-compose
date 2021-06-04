@@ -1,0 +1,28 @@
+<div>
+    <div *ngIf="covidVaccine && dailyVaccineList" class="container">
+        <div class="heading">
+            <span>{{covidVaccine.country}}</span>
+        </div>
+
+        <div class="covid-data shadow-lg mb-5 bg-white">
+            <div class="nav nav-tabs">
+                <li class="nav-item">
+                    <div>Covid Vaccine Data</div>
+                </li>
+            </div>
+            <app-covid-data [covidvaccine]="covidVaccine"></app-covid-data>
+        </div>
+        <div class="covid-data shadow-lg mb-5 bg-white">
+            <div class="nav nav-tabs">
+                <li class="nav-item">
+                    <div>Daily Vaccinations</div>
+                </li>
+            </div>
+            <app-daily-vaccine-data [dailyVaccineList]="dailyVaccineList"></app-daily-vaccine-data>
+        </div>
+
+    </div>
+    <div *ngIf="!covidVaccine"class="no-data">
+        No data found
+    </div>
+</div>
