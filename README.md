@@ -34,7 +34,7 @@ cd covid-dashboard-docker-compose
 
 5. Build and run docker compose
 ```bash
-docker-compose up --build -d
+docker compose up --build -d
 ```
 5. Open browser on http://localhost:4200
 
