@@ -14,6 +14,7 @@ import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ResourceLoader;
@@ -22,9 +23,12 @@ import org.springframework.core.io.ResourceLoader;
 @EnableBatchProcessing
 public class BatchJobConfig {
 
-    public JobBuilderFactory jobBuilderFactory;
+    @Value("${s3.url}")
+    private String S3_URL;
 
-    public StepBuilderFactory stepBuilderFactory;
+    private JobBuilderFactory jobBuilderFactory;
+
+    private StepBuilderFactory stepBuilderFactory;
 
     private ResourceLoader resourceLoader;
 
@@ -39,7 +43,7 @@ public class BatchJobConfig {
     @Bean
     public FlatFileItemReader<CovidVaccineDto> reader() {
         return new FlatFileItemReaderBuilder<CovidVaccineDto>().name("covidVaccineItemReader")
-                .resource(resourceLoader.getResource("s3://covid-vaccine-data/country_vaccinations.csv")).delimited()
+                .resource(resourceLoader.getResource(S3_URL)).delimited()
                 .names(new String[] { "country", "iso_code", "date", "total_vaccinations", "people_vaccinated",
                         "people_fully_vaccinated", "daily_vaccinations_raw", "daily_vaccinations",
                         "total_vaccinations_per_hundred", "people_vaccinated_per_hundred",
