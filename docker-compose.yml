@@ -15,7 +15,7 @@ services:
 
     ui:
         build: ./covid-dashboard-ui/
-        image: ga7uti/coviddashboarui:latest
+        image: ga7uti/coviddashboardui:latest
         ports: 
             - 4200:80
         networks: 
