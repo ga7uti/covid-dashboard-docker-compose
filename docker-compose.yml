@@ -3,16 +3,6 @@ networks:
     covid-network: 
         driver: bridge
 services:
-    db:
-        image: postgres
-        restart: always
-        environment:
-          POSTGRES_PASSWORD: postgres
-        ports: 
-            - 5432:5432
-        networks: 
-            - covid-network
-
     ui:
         build: ./covid-dashboard-ui/
         image: ga7uti/coviddashboardui:latest
@@ -34,7 +24,5 @@ services:
         image: ga7uti/countryservice:latest
         ports: 
             - 9091:9091
-        depends_on: 
-            - db
         networks: 
             - covid-network

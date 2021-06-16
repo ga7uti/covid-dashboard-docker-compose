@@ -1,4 +1,4 @@
-INSERT INTO countries (id, name, code) VALUES
+INSERT INTO `countries` (id, name, code) VALUES
 (1,'Afghanistan','AFG'),
 (2,'Aland Islands','ALA'),
 (3,'Albania','ALB'),
@@ -250,7 +250,5 @@ INSERT INTO countries (id, name, code) VALUES
 (249,'Western Sahara','ESH'),
 (250,'Yemen','YEM'),
 (251,'Zambia','ZMB'),
-(252,'Zimbabwe','ZWE')
-ON CONFLICT(id) 
-DO NOTHING;
+(252,'Zimbabwe','ZWE');
 
